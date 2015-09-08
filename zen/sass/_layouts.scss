@@ -1,0 +1,38 @@
+/**
+ * @file
+ * Layout styles.
+ *
+ * We use example breakpoints of 27em, 41em, 49em, 63em and 69px. The right
+ * breakpoints to use for your site depend on your content.
+ * We use example breakpoints of 444px, 666px, 777px, 999px and 1111px. The
+ * right breakpoints to use for your site depend on your content.
+ */
+
+/* The container for our grid items. */
+.l-container {
+  @include zen-grid-container();
+  @include zen-grid-background();
+  // Center the layout and ensure it doesn't grow too wide.
+  margin: {
+    left:  auto;
+    right: auto;
+  }
+  // Add some padding so we can see the grid background numbers more easily.
+  padding: {
+    top:    $vertical-rhythm;
+    bottom: $vertical-rhythm;
+  }
+  max-width: 1280px;
+}
+
+.l-header    { background: hsla(0,   100%, 90%, .5); } // fcc
+  .l-menu    { background: hsla(240, 100%, 90%, .5); } // ccf
+.l-main      { background: hsla(120, 100%, 90%, .5); } // cfc
+  .l-content { background: hsla(60,  100%, 90%, .5); } // ffc
+  .l-aside1  { background: hsla(300, 100%, 90%, .5); } // fcf
+  .l-aside2  { background: hsla(180, 100%, 90%, .5); } // cff
+.l-footer    { background: hsla(30,  100%, 90%, .5); }
+
+
+$zen-columns: 1;
+

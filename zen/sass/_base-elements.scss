@@ -1,0 +1,29 @@
+/**
+ * @file
+ * Base HTML element styles.
+ */
+
+html {
+  font-size:   $base-font-size;
+  line-height: $base-line-height;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  &:hover {
+    color: #fff;
+    background: #000;
+  }
+}
+.links {
+  list-style: none;
+  padding: 0;
+  &.inline li {
+    display: inline;
+  }
+}
