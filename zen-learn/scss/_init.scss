@@ -1,0 +1,63 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+//
+// @file
+// This file sets up all our variables and loads all the modules we need for all
+// generated CSS in this project. To use it, simply: @import "init";
+//
+
+// Supported browsers variable for Compass.
+$browser-minimum-versions: (
+        'chrome':  null,
+        'firefox': null,
+        'ie':      "8",
+        'safari':  null,
+        'opera':   null
+);
+
+// Set up Zen Grids.
+$zen-columns                      : 1;
+$zen-gutters                      : 20px;
+$zen-auto-include-grid-item-base  : false;
+
+// Breakpoints
+$mobile     : 120px 399px;   // Before that it is watch!
+$tablet     : 400px 1023px;  // After that is tablet, etc...
+$laptop     : 1024px 1279px;
+$desktop    : 1280px;
+
+// Columns for breakpoints
+$mob-col  : 1;
+$tab-col  : 2;
+$lap-col  : 6;
+$desk-col : 12;
+
+// Set up a unit of vertical rhythm.
+$base-font-size                   : 16px;
+$base-line-height                 : 1.5em;
+$vertical-rhythm                  : 1rem*($base-line-height/1em);
+
+// Colors
+$col-1    : hsla(  0, 100%, 90%, 0.8);
+$col-2    : hsla( 60, 100%, 90%, 0.8);
+$col-3    : hsla(120, 100%, 90%, 0.8);
+$col-4    : hsla(180, 100%, 90%, 0.8);
+$col-5    : hsla(240, 100%, 90%, 0.8);
+$col-6    : hsla(300, 100%, 90%, 0.8);
+$col-grid : #ffdede;
+
+//
+// Import our modules.
+//
+@import "compass/reset";
+
+@import "zen-grids";
+@import "zen-grids/background";
+@import "zen-grids/flow";
+
+@import "breakpoint";
+
+@import "abstracts";

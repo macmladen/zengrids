@@ -1,0 +1,138 @@
+// Import system
+@import "init";
+
+// General settings
+$zen-gutters: 1em;
+//$display-zen-grid-background: false;
+
+// Common styles: font, coloring
+.l-container .block {
+  text-align: center;
+  font-family: Verdana, sans-serif;
+  font-weight: bold;
+  padding: 1em 0;
+}
+.block-1 {
+  background: $col-1;
+}
+.block-2 {
+  background: $col-2;
+}
+.block-3 {
+  background: $col-3;
+}
+.block-4 {
+  background: $col-4;
+}
+.block-5 {
+  background: $col-5;
+}
+.block-6 {
+  background: $col-6;
+}
+
+// This is mobile first design so breakpoints are min-width
+
+/**
+ * Mobile version
+ */
+$zen-columns: 1; // Set the total number of columns in the grid.
+.l-container {
+  padding: 2em 0;                 // Leave space for column numbers.
+  @include zen-grid-container();  // Apply this mixin to the container.
+  @include zen-grid-background(); // Apply this to have background.
+}
+
+/**
+ * Tablet version
+ */
+$zen-columns: 2; // Set the total number of columns in the grid.
+@include breakpoint($tablet) {
+  .l-container {
+    @include zen-grid-container(); // Apply this mixin to the container.
+    @include zen-grid-background(); // Apply this to have background.
+  }
+  .block-1 {
+  }
+  .block-2 {
+    height: 6em;
+    @include zen-grid-item(1, 1, right);
+  }
+  .block-3 {
+    @include zen-grid-item(1, 1);
+  }
+  .block-4 {
+    @include zen-new-row();
+    @include zen-grid-item(1, 1);
+  }
+  .block-5 {
+    @include zen-new-row();
+    @include zen-grid-item(1, 2);
+  }
+  .block-6 {
+    @include zen-grid-item(1, 1);
+  }
+}
+
+
+/**
+ * Laptop version
+ */
+$zen-columns: 6; // Set the total number of columns in the grid.
+@include breakpoint($laptop) {
+  .l-container {
+    @include zen-grid-container(); // Apply this mixin to the container.
+    @include zen-grid-background(); // Apply this to have background.
+  }
+  .block-1 {
+    @include zen-grid-item(4, 1);
+  }
+  .block-2 {
+    @include zen-grid-item(2, 1, right);
+  }
+  .block-3 {
+    @include zen-new-row();
+    @include zen-grid-item(6, 1);
+  }
+  .block-4 {
+    @include zen-new-row();
+    @include zen-grid-item(2, 3);
+  }
+  .block-5 {
+    @include zen-grid-item(2, 5);
+  }
+  .block-6 {
+    @include zen-grid-item(2, 1);
+  }
+}
+
+
+/**
+ * Desktop version
+ */
+$zen-columns: 12; // Set the total number of columns in the grid.
+@include breakpoint($desktop) {
+  .l-container {
+    @include zen-grid-container(); // Apply this mixin to the container.
+    @include zen-grid-background(); // Apply this to have background.
+  }
+  .block-1 {
+    @include zen-grid-item(6, 4, right);
+  }
+  .block-2 {
+    @include zen-grid-item(3, 1);
+  }
+  .block-3 {
+    @include zen-grid-item(3, 10);
+  }
+  .block-4 {
+    @include zen-new-row();
+    @include zen-grid-item(3, 1);
+  }
+  .block-5 {
+    @include zen-grid-item(3, 10);
+  }
+  .block-6 {
+    @include zen-grid-item(6, 4);
+  }
+}
